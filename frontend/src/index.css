@@ -7,13 +7,57 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-header {
-  background-color: #404040;
+#root {
+  height: 100%;
+}
+
+
+
+
+/* header {
+  background-color: #203040;;
   padding: 1rem;
 }
  header a{
    color: #ffffff;
    font-weight: bold;
-   font-size: 30px;
+   font-size: 26px;
    text-decoration: none;
- }
+
+ } */
+
+ .products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product {
+  border: 1px #404040 solid;
+  margin: 1rem;
+}
+.product img {
+  width: 100%;
+  max-width: 400px;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #ffffff;
+  color: #ffffff;
+  
+}
+
+.footeral {
+  text-align: center;
+  font-size: small;
+  color: #404040;
+}
+
+.rating span {
+  color: #ffc000;
+}
+
+.img-large {
+  max-width: 100%;
+}
