@@ -9,16 +9,20 @@ import { HelmetProvider } from 'react-helmet-async';
 import NavbarBar from './components/NavBar/navbar';
 import Footer from './components/NavBar/Footer';
 import { StoreProvider } from './Store/Store';
+import { PayPalScriptProvider } from '@paypal/react-paypal-js'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
     <StoreProvider>
      <BrowserRouter>
      <HelmetProvider>
+     <PayPalScriptProvider deferLoading={true}>
      <NavbarBar/>
     <App />
     <Footer/>
+    </PayPalScriptProvider>
     </HelmetProvider>
     </BrowserRouter>
     </StoreProvider>

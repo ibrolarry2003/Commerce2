@@ -1,7 +1,7 @@
 
 import React, { useContext, useEffect, useReducer } from 'react';
-import { useParams } from 'react-router-dom'
-import productReducerOne from '../Reducers/reducerone';
+import { useNavigate, useParams } from 'react-router-dom'
+import { productReducerOne } from '../Reducers/reducers';
 import axios from 'axios';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -18,16 +18,17 @@ import { Store } from '../../Store/Store';
 
 
 
-const reducerone = productReducerOne;
+const reducer = productReducerOne;
 
 
 
 function Prodscreen() {
 
+  const navigate = useNavigate();
     const params = useParams();
     const {slug} = params
 
-    const [{ loading, error, product }, dispatch] = useReducer(reducerone, {
+    const [{ loading, error, product }, dispatch] = useReducer(reducer, {
         product: [],
         loading: true,
         error: '',
@@ -64,7 +65,10 @@ function Prodscreen() {
           type: 'CART_ADD_ITEM',
           payload: { ...product, quantity},
         });
+        navigate('/cart');
       };
+
+     
   return (
 
     loading ? (
@@ -132,6 +136,7 @@ function Prodscreen() {
                     <div className="d-grid">
                       <Button onClick={addToCartHandler} variant="danger">Add to Cart</Button>
                     </div>
+                  
                   </ListGroup.Item>
                 )}
               </ListGroup>

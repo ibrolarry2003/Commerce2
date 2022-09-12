@@ -1,6 +1,6 @@
 import React, { useEffect, useReducer} from 'react'
 import axios from 'axios'
-import productReducer from '../Reducers/reducers';
+import {productReducer} from '../Reducers/reducers'
 import logger from 'use-reducer-logger';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -24,8 +24,7 @@ const [{ loading, error, products }, dispatch] = useReducer(logger(reducer), {
 useEffect(() => {
 
   const fetchData = async () => {
-    // const result = await axios.get('/api/products');
-    // setProducts(result.data);
+   
     dispatch({ type: 'FETCH_REQUEST' });
     try {
       const result = await axios.get('/api/products');
