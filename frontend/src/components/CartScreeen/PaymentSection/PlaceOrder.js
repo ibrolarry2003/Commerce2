@@ -123,7 +123,7 @@ function PlaceOrder() {
                       <Col md={3}>
                         <span>{item.quantity}</span>
                       </Col>
-                      <Col md={3}>${item.price}</Col>
+                      <Col md={3}>N{item.price}</Col>
                     </Row>
                   </ListGroup.Item>
                 ))}
@@ -140,19 +140,19 @@ function PlaceOrder() {
                 <ListGroup.Item>
                   <Row>
                     <Col>Items</Col>
-                    <Col>${cart.itemsPrice.toFixed(2)}</Col>
+                    <Col>N{cart.itemsPrice.toFixed(2)}</Col>
                   </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Row>
                     <Col>Shipping</Col>
-                    <Col>${cart.shippingPrice.toFixed(2)}</Col>
+                    <Col>N{cart.shippingPrice.toFixed(2)}</Col>
                   </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Row>
                     <Col>Tax</Col>
-                    <Col>${cart.taxPrice.toFixed(2)}</Col>
+                    <Col>N{cart.taxPrice.toFixed(2)}</Col>
                   </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
@@ -161,7 +161,7 @@ function PlaceOrder() {
                       <strong> Order Total</strong>
                     </Col>
                     <Col>
-                      <strong>${cart.totalPrice.toFixed(2)}</strong>
+                      <strong>N{cart.totalPrice.toFixed(2)}</strong>
                     </Col>
                   </Row>
                 </ListGroup.Item>
@@ -186,4 +186,4 @@ function PlaceOrder() {
   );
 }
 
-export default PlaceOrder
+export default PlaceOrder;

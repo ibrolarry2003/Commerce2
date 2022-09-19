@@ -1,6 +1,6 @@
 import React, { useEffect, useReducer} from 'react'
 import axios from 'axios'
-import {productReducer} from '../Reducers/reducers'
+import { productReducer } from '../Reducers/reducers'
 import logger from 'use-reducer-logger';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -11,10 +11,8 @@ import Loadingerror from '../Spinner/Loadingerror';
 
 const reducer = productReducer;
 
-
 export default function Products() {
 
-// const[products, setProducts] = useState([]);
 const [{ loading, error, products }, dispatch] = useReducer(logger(reducer), {
   products: [],
   loading: true,

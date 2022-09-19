@@ -11,6 +11,8 @@ import Payments from "./components/CartScreeen/PaymentSection/Payments";
 import PlaceOrder from "./components/CartScreeen/PaymentSection/PlaceOrder";
 import OrderPage from "./components/CartScreeen/PaymentSection/OrderPage";
 import OrderHistory from "./components/CartScreeen/OrderHistoryPages/OrderHistory";
+import ProfilePage from "./components/Profile/ProfilePage";
+import SearchPage from "./components/NavBar/SearchPage";
 
 
 
@@ -31,6 +33,8 @@ function App() {
        <Route path="/placeorder" element={<PlaceOrder />} />
        <Route path= "/order/:id" element = {<OrderPage />} />
        <Route path="/orderhistory" element={<OrderHistory />} />
+       <Route path="/profile" element={<ProfilePage />} />
+       <Route path="/search" element={<SearchPage />} />
 
        </Routes>
        </Container>

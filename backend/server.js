@@ -1,5 +1,4 @@
 import express from 'express';
-// import data from './data.js';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv'
 import seedRouter from './routes/seedRoutes.js';
@@ -11,11 +10,9 @@ import orderRouter from './routes/orderRoutes.js';
 dotenv.config();
 
 const app = express();
-
-
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
-    console.log('connected to db');
+    console.log('connected to MongoDB');
   })
   .catch((err) => {
     console.log(err.message);
@@ -49,5 +46,5 @@ app.get('/', (req, res) => {
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
-  console.log(`serve at http://localhost:${port}`);
+  console.log(`Server is ready with Engr Palasa Smart Guy with port http://localhost:${port}`);
 });

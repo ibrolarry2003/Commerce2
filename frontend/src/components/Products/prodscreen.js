@@ -1,4 +1,3 @@
-
 import React, { useContext, useEffect, useReducer } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
 import { productReducerOne } from '../Reducers/reducers';
@@ -16,17 +15,13 @@ import Loadingerror from '../Spinner/Loadingerror';
 import { getError } from '../../utils';
 import { Store } from '../../Store/Store';
 
-
-
 const reducer = productReducerOne;
-
-
 
 function Prodscreen() {
 
   const navigate = useNavigate();
-    const params = useParams();
-    const {slug} = params
+  const params = useParams();
+  const {slug} = params
 
     const [{ loading, error, product }, dispatch] = useReducer(reducer, {
         product: [],
@@ -96,7 +91,7 @@ function Prodscreen() {
             </ListGroup.Item>
             <ListGroup.Item>
               <Prodrating
-                ratings={product.ratings}
+                rating={product.ratings}
                 reviewz={product.reviewz}
               ></Prodrating>
             </ListGroup.Item>
@@ -148,9 +143,7 @@ function Prodscreen() {
         </Row>
           
           </div>
-      )
-  
+      )  
   )
-
-      }
+  }
 export default Prodscreen

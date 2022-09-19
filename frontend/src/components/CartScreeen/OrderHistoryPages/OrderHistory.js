@@ -14,7 +14,7 @@ const reducer = orderHistoryreducer;
 
 function OrderHistory() {
  
-    const { state } = useContext(Store);
+  const { state } = useContext(Store);
   const { userInfo } = state;
   const navigate = useNavigate();
 
@@ -22,6 +22,7 @@ function OrderHistory() {
     loading: true,
     error: '',
   });
+  
   useEffect(() => {
     const fetchData = async () => {
       dispatch({ type: 'FETCH_REQUEST' });

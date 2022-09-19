@@ -29,6 +29,7 @@ export const productReducerOne = (state, action) => {
   }
 };
 
+// Place order reducer
 export const placeOrderreducer = (state, action) => {
   switch (action.type) {
     case 'CREATE_REQUEST':
@@ -42,6 +43,7 @@ export const placeOrderreducer = (state, action) => {
   }
 };
 
+//order page reducer
 export function orderPagereducer(state, action) {
   switch (action.type) {
     case 'FETCH_REQUEST':
@@ -64,6 +66,7 @@ export function orderPagereducer(state, action) {
   }
 };
 
+//order History
 export const orderHistoryreducer = (state, action) => {
   switch (action.type) {
     case 'FETCH_REQUEST':
@@ -76,3 +79,40 @@ export const orderHistoryreducer = (state, action) => {
       return state;
   }
 };
+
+// profile page reducer
+export const profileReducer = (state, action) => {
+  switch (action.type) {
+    case 'UPDATE_REQUEST':
+      return { ...state, loadingUpdate: true };
+    case 'UPDATE_SUCCESS':
+      return { ...state, loadingUpdate: false };
+    case 'UPDATE_FAIL':
+      return { ...state, loadingUpdate: false };
+
+    default:
+      return state;
+  }
+};
+
+export const searchReducer = (state, action) => {
+  switch (action.type) {
+    case 'FETCH_REQUEST':
+      return { ...state, loading: true };
+    case 'FETCH_SUCCESS':
+      return {
+        ...state,
+        products: action.payload.products,
+        page: action.payload.page,
+        pages: action.payload.pages,
+        countProducts: action.payload.countProducts,
+        loading: false,
+      };
+    case 'FETCH_FAIL':
+      return { ...state, loading: false, error: action.payload };
+
+    default:
+      return state;
+  }
+};
+

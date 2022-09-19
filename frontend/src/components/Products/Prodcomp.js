@@ -1,4 +1,3 @@
-
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import Card from 'react-bootstrap/Card';
@@ -7,13 +6,9 @@ import Prodrating from './Prodrating';
 import { Store } from '../../Store/Store';
 import axios from 'axios';
 
-
-
-
 export default function Prodcomp(props) {
 
   const { product} = props
-
   const { state, dispatch: ctxDispatch } = useContext(Store);
 
   const {
@@ -34,19 +29,16 @@ export default function Prodcomp(props) {
     });
   };
 
-
   return (
-  
-    
       <Card>
             <Link to= {`/product/${product.slug}`}>
-            <img src = {product.image}  className="card-img-top" alt = {product.name}/> </Link>
-
+            <img src = {product.image}  className="card-img-top" alt = {product.name}/> 
+            </Link>
           <Card.Body>
           <Link to = {`/product/${product.slug}`} className= 'link-underline'>
           <Card.Title>{product.name}</Card.Title>
           </Link>
-          <Prodrating ratings = {product.ratings} reviewz = {product.reviewz}/>
+          <Prodrating rating = {product.ratings} reviewz = {product.reviewz}/>
           <Card.Text>N{product.price}</Card.Text>
 
           {product.countInStock === 0 ? (
