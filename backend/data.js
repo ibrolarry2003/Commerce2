@@ -12,7 +12,7 @@ const data = {
             name: 'Yetunde',
             email: 'wife@trevohealthsolutions.com',
             password: bcrypt.hashSync('1234', 8),
-            isAdmin: false,
+            isAdmin: true,
           },
           {
             name: 'Folake',
@@ -58,6 +58,22 @@ description: "High quality" },
 
 { name: "Shield By Trevo-90 counts", category: "health", slug: 'trevo8',
 image: "/images/p4.jpg", price: 20000, countInStock: 0, brand: "Health", rating: 4.0, reviewz: 20,
+description: "High quality" },
+
+{ name: "Another shield", category: "health", slug: 'trevo9',
+image: "/images/p4.jpg", price: 21000, countInStock: 10, brand: "Health", rating: 4.0, reviewz: 20,
+description: "High quality" },
+
+{  name: "Shield ", category: "Pharmacy", slug: 'trevo71',
+image: "/images/p3.jpg", price: 29000, countInStock: 0, brand: "Health", rating: 4.0, reviewz: 20,
+description: "High quality" },
+
+{ name: "Shield By", category: "Supermarket", slug: 'trevo81',
+image: "/images/p5.jpg", price: 27000, countInStock: 0, brand: "Health", rating: 4.0, reviewz: 20,
+description: "High quality" },
+
+{ name: "Another shield and life", category: "Store", slug: 'trevo91',
+image: "/images/p6.jpg", price: 22000, countInStock: 10, brand: "Health", rating: 4.0, reviewz: 20,
 description: "High quality" },
 
     ]

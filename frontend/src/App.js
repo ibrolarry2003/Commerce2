@@ -13,13 +13,16 @@ import OrderPage from "./components/CartScreeen/PaymentSection/OrderPage";
 import OrderHistory from "./components/CartScreeen/OrderHistoryPages/OrderHistory";
 import ProfilePage from "./components/Profile/ProfilePage";
 import SearchPage from "./components/NavBar/SearchPage";
-
-
+import ProtectedRoute from "./components/DashBoard/ProtectedRoute";
+import AdminRoute from "./components/DashBoard/AdminRoute";
+import DashboardPage from "./components/DashBoard/DashBoardsPage";
+import ProductListPage from "./components/DashBoard/ProductListPage";
+import ProductEditPage from "./components/DashBoard/ProductEditPage";
+import OrderlistPage from "./components/DashBoard/OrderlistPage";
 
 function App() {
   return (
-   <div>
-         
+   <div>   
       <Container>
           <Routes>
        <Route path="/" element={ <HomePage/>} />
@@ -31,18 +34,61 @@ function App() {
        <Route path="/signup" element={<Signup />} />
        <Route path="/payment" element={<Payments />} />
        <Route path="/placeorder" element={<PlaceOrder />} />
-       <Route path= "/order/:id" element = {<OrderPage />} />
-       <Route path="/orderhistory" element={<OrderHistory />} />
-       <Route path="/profile" element={<ProfilePage />} />
+       <Route path= "/order/:id" 
+       element = {
+        <ProtectedRoute>
+       <OrderPage />
+       </ProtectedRoute>
+       } />
+       <Route path="/orderhistory" element={
+       <ProtectedRoute>
+       <OrderHistory />
+       </ProtectedRoute>
+       } />
+       <Route path="/profile" 
+       element=
+       {<ProtectedRoute>
+       <ProfilePage />
+       </ProtectedRoute>
+       } />
        <Route path="/search" element={<SearchPage />} />
-
+       <Route
+                path="/admin/dashboard"
+                element={
+                  <AdminRoute>
+                    <DashboardPage />
+                  </AdminRoute>
+                }
+              />
+                 <Route
+                path="/admin/orders"
+                element={
+                  <AdminRoute>
+                    <OrderlistPage />
+                  </AdminRoute>
+                }
+              />
+              <Route
+                path="/admin/products"
+                element={
+                  <AdminRoute>
+                    <ProductListPage />
+                  </AdminRoute>
+                }
+              />
+                  <Route
+                path="/admin/product/:id"
+                element={
+                  <AdminRoute>
+                    <ProductEditPage />
+                  </AdminRoute>
+                }
+              />
+            
        </Routes>
        </Container>
     
    </div>
-
- 
   );
 }
-
 export default App;

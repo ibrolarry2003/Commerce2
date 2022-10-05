@@ -38,7 +38,7 @@ export default function Prodcomp(props) {
           <Link to = {`/product/${product.slug}`} className= 'link-underline'>
           <Card.Title>{product.name}</Card.Title>
           </Link>
-          <Prodrating rating = {product.ratings} reviewz = {product.reviewz}/>
+          <Prodrating rating = {product.rating} reviewz = {product.reviewz}/>
           <Card.Text>N{product.price}</Card.Text>
 
           {product.countInStock === 0 ? (

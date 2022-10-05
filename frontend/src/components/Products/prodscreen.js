@@ -91,7 +91,7 @@ function Prodscreen() {
             </ListGroup.Item>
             <ListGroup.Item>
               <Prodrating
-                rating={product.ratings}
+                rating={product.rating}
                 reviewz={product.reviewz}
               ></Prodrating>
             </ListGroup.Item>

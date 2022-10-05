@@ -5,6 +5,8 @@ import seedRouter from './routes/seedRoutes.js';
 import productRouter from './routes/productRoutes.js';
 import userRouter from './routes/userRoutes.js';
 import orderRouter from './routes/orderRoutes.js';
+import path from 'path'
+import uploadRouter from './routes/uploadRoute.js';
 
 
 dotenv.config();
@@ -12,7 +14,7 @@ dotenv.config();
 const app = express();
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
-    console.log('connected to MongoDB');
+    console.log('connected to Live MongoDB');
   })
   .catch((err) => {
     console.log(err.message);
@@ -26,6 +28,8 @@ app.get('/api/keys/paypal', (req, res) => {
   res.send(process.env.PAYPAL_CLIENT_ID || 'sb');
 });
 
+app.use('/api/upload', uploadRouter);
+
 app.use('/api/seed', seedRouter);
 
 app.use('/api/products', productRouter);
@@ -37,9 +41,15 @@ app.use('/api/orders', orderRouter);
 
 //test
 app.get('/', (req, res) => {
-    res.send('Server is ready with Engr Palasa Smart Guy');
+    res.send('Server is ready with Engr Palasa Smart Guy. Thanks');
   });
 
+  const __dirname = path.resolve();
+  app.use(express.static(path.join(__dirname, '/frontend/build')));
+  app.get('*', (req, res) =>
+  res.sendFile(path.join(__dirname, '/frontend/build/index.html'))
+);
+  
   app.use((err, req, res, next) => {
     res.status(500).send({ message: err.message });
   });
