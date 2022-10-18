@@ -8,12 +8,10 @@ import orderRouter from './routes/orderRoutes.js';
 import path from 'path'
 import uploadRouter from './routes/uploadRoute.js';
 
-
 dotenv.config();
 
 const app = express();
-mongoose.connect(process.env.MONGODB_URI)
-  .then(() => {
+mongoose.connect(process.env.MONGODB_URI).then(() => {
     console.log('connected to Live MongoDB');
   })
   .catch((err) => {
@@ -21,7 +19,6 @@ mongoose.connect(process.env.MONGODB_URI)
   });
 
 app.use(express.json());
-
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/api/keys/paypal', (req, res) => {

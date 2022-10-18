@@ -19,12 +19,14 @@ import DashboardPage from "./components/DashBoard/DashBoardsPage";
 import ProductListPage from "./components/DashBoard/ProductListPage";
 import ProductEditPage from "./components/DashBoard/ProductEditPage";
 import OrderlistPage from "./components/DashBoard/OrderlistPage";
+import UserList from "./components/DashBoard/userList";
+import UserEdit from "./components/DashBoard/UserEdit";
 
 function App() {
   return (
    <div>   
       <Container>
-          <Routes>
+      <Routes>
        <Route path="/" element={ <HomePage/>} />
        <Route path="/product" element={  <Products/>} />
        <Route path="/product/:slug" element={  <Prodscreen/>} />
@@ -34,6 +36,7 @@ function App() {
        <Route path="/signup" element={<Signup />} />
        <Route path="/payment" element={<Payments />} />
        <Route path="/placeorder" element={<PlaceOrder />} />
+      
        <Route path= "/order/:id" 
        element = {
         <ProtectedRoute>
@@ -81,6 +84,22 @@ function App() {
                 element={
                   <AdminRoute>
                     <ProductEditPage />
+                  </AdminRoute>
+                }
+              />
+              <Route
+                path="/admin/users"
+                element={
+                  <AdminRoute>
+                    <UserList />
+                  </AdminRoute>
+                }
+              />
+              <Route
+                path="/admin/user/:id"
+                element={
+                  <AdminRoute>
+                    <UserEdit/>
                   </AdminRoute>
                 }
               />

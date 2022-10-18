@@ -9,10 +9,6 @@ import  axios  from 'axios';
 import { getError } from '../../utils';
 import { toast } from 'react-toastify';
 
-
-
-
-
 function SigninScreen() {
 
     const navigate = useNavigate();
@@ -81,4 +77,4 @@ function SigninScreen() {
       </Container>
     );
   }
-export default SigninScreen
+export default SigninScreen;

@@ -15,14 +15,15 @@ import { toast } from 'react-toastify';
 const reducer = Producteditreducer;
 
 function ProductEditPage() {
+
   const navigate = useNavigate();
-  const params = useParams(); // /product/:id
+  const params = useParams(); 
   const { id: productId } = params;
 
   const { state } = useContext(Store);
   const { userInfo } = state;
-  const [{ loading, error, loadingUpdate, loadingUpload }, dispatch] =
-    useReducer(reducer, {
+  const [{ loading, error, loadingUpdate, loadingUpload }, 
+    dispatch] = useReducer(reducer, {
       loading: true,
       error: '',
     });
@@ -64,8 +65,7 @@ function ProductEditPage() {
     e.preventDefault();
     try {
       dispatch({ type: 'UPDATE_REQUEST' });
-      await axios.put(
-        `/api/products/${productId}`,
+      await axios.put(`/api/products/${productId}`,
         {
           _id: productId,
           name,
@@ -120,7 +120,7 @@ function ProductEditPage() {
       <h1>Edit Product {productId}</h1>
 
       {loading ? (
-        <LoadingBox></LoadingBox>
+        <LoadingBox/>
       ) : error ? (
         <Loadingerror variant="danger">{error}</Loadingerror>
       ) : (
@@ -206,4 +206,4 @@ function ProductEditPage() {
     </Container>
   );
 }
-export default ProductEditPage
+export default ProductEditPage;

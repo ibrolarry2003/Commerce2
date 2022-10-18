@@ -19,13 +19,13 @@ productRouter.post(
     const newProduct = new Product({
       name: 'sample name ' + Date.now(),
       slug: 'sample-name-' + Date.now(),
-      image: '/images/p1.jpg',
+      image: '/images/p51.jpg',
       price: 34455,
       category: 'sample category',
       brand: 'sample brand',
       countInStock: 4,
       rating:4,
-      numReviews: 14,
+      reviewz: 14,
       description: 'sample description',
     });
     const product = await newProduct.save();
@@ -38,7 +38,7 @@ productRouter.put(
   isAuth,
   isAdmin,
   expressAsyncHandler(async (req, res) => {
-    const productId = req.params._id;
+    const productId = req.params.id;
     const product = await Product.findById(productId);
     if (product) {
       product.name = req.body.name;
