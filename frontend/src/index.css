@@ -25,6 +25,7 @@ body {
 .product img {
   width: 100%;
   max-width: 400px;
+  border-radius: 50%;
 }
 
 footer {
@@ -46,6 +47,19 @@ footer {
 
 .img-large {
   max-width: 100%;
+  opacity: 0.5;
+  /* filter: grayscale(100%); */
+
+}
+
+.img-large:hover {
+  box-shadow: 0 0 2px 1px rgba(186, 0, 0, 0.5);
+}
+.topleft {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-size: 18px;
 }
 
 .img-thumbnail {
@@ -58,7 +72,7 @@ footer {
 
 .link-underline {
   text-decoration: none;
-  font-size-adjust: 10px;
+  font-size-adjust: 0.58;
 }
 
 .checkout-steps > div {
@@ -94,4 +108,47 @@ footer {
 
 .text-bold {
   font-weight: bold;
+}
+
+/* Map */
+
+.full-box {
+  height: 100vh;
+  max-width: initial;
+}
+.full-box header,
+.full-box footer {
+  display: none;
+}
+.full-box .container {
+  height: 100vh;
+  max-width: initial;
+  margin: 0;
+  padding: 0;
+}
+
+.full-box .mt-3 {
+  margin-top: 0 !important;
+}
+
+.map-input-box {
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0.5rem auto;
+  width: 25rem;
+  height: 3rem;
+  display: flex;
+}
+.map-input-box input {
+  border-radius: 1rem 0 0 1rem;
+  border-right: 0;
+}
+.map-input-box button {
+  border-radius: 0 1rem 1rem 0;
+  border-left: 0;
+}
+button.thumbnail {
+  padding: 0;
 }

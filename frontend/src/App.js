@@ -43,17 +43,20 @@ function App() {
        <OrderPage />
        </ProtectedRoute>
        } />
+
        <Route path="/orderhistory" element={
        <ProtectedRoute>
        <OrderHistory />
        </ProtectedRoute>
        } />
+
        <Route path="/profile" 
        element=
        {<ProtectedRoute>
        <ProfilePage />
        </ProtectedRoute>
        } />
+
        <Route path="/search" element={<SearchPage />} />
        <Route
                 path="/admin/dashboard"
@@ -61,48 +64,47 @@ function App() {
                   <AdminRoute>
                     <DashboardPage />
                   </AdminRoute>
-                }
-              />
+                }/>
+
                  <Route
                 path="/admin/orders"
                 element={
                   <AdminRoute>
                     <OrderlistPage />
                   </AdminRoute>
-                }
-              />
+                }/>
+
               <Route
                 path="/admin/products"
                 element={
                   <AdminRoute>
                     <ProductListPage />
                   </AdminRoute>
-                }
-              />
+                }/>
+
                   <Route
                 path="/admin/product/:id"
                 element={
                   <AdminRoute>
                     <ProductEditPage />
                   </AdminRoute>
-                }
-              />
+                }/>
+
               <Route
                 path="/admin/users"
                 element={
                   <AdminRoute>
                     <UserList />
                   </AdminRoute>
-                }
-              />
+                }/>
+
               <Route
                 path="/admin/user/:id"
                 element={
                   <AdminRoute>
                     <UserEdit/>
                   </AdminRoute>
-                }
-              />
+                }/>
             
        </Routes>
        </Container>

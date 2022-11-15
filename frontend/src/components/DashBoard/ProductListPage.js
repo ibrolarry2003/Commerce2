@@ -61,8 +61,7 @@ function ProductListPage() {
     if (window.confirm('Are you sure to create?')) {
       try {
         dispatch({ type: 'CREATE_REQUEST' });
-        const { data } = await axios.post(
-          '/api/products',
+        const { data } = await axios.post('/api/products',
           {},
           {
             headers: { Authorization: `Bearer ${userInfo.token}` },
@@ -155,8 +154,7 @@ function ProductListPage() {
                     <Button
                       type="button"
                       variant="light"
-                      onClick={() => deleteHandler(product)}
-                    >
+                      onClick={() => deleteHandler(product)}>
                       Delete
                     </Button>
                   </td>

@@ -2,6 +2,8 @@ import React from 'react'
 import Alert from 'react-bootstrap/Alert';
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
+import Slider from './slider';
+
 
 export default function HomePage() {
   return (
@@ -9,8 +11,10 @@ export default function HomePage() {
             <Helmet>
     <title>Amazona</title>
     </Helmet>
+   
       <h2>Welcome to Home Page</h2>
       <Link to= '/product'>Products</Link>
+      <Slider/>
       <>
       {[
         'primary',

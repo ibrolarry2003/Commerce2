@@ -79,7 +79,8 @@ function Prodscreen() {
             className="img-large"
             src={product.image}
             alt={product.name}
-          ></img>
+          />
+            
         </Col>
         <Col md={3}>
         <ListGroup variant="flush">
